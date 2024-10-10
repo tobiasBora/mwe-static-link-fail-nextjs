@@ -1,3 +1,20 @@
+## Minimal working example
+
+This project is a minimal reproducible working example for https://stackoverflow.com/questions/79070956/nextjs-client-side-navigation-does-not-work-in-static-build/79071152#79071152 and https://github.com/vercel/next.js/issues/64882
+
+To reproduce, if you have nix installed, just do:
+```
+$ nix --experimental-features 'nix-command flakes' build .#mwe
+$ ./result/bin/mwe
+```
+Open the page, click on the link, and observe that a full page refresh is done. If you don't have nix, you may just be lucky enough that you can reproduce it with:
+```
+$ npm run build
+$ npx http-serve -i -c-1 out
+```
+
+## Project
+
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
 ## Getting Started
